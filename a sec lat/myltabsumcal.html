@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table</title>
+    </head>
+
+    <body>
+    <p>
+    <button onclick="table()">Display Multiplicaton Table</button>
+    <button onclick="sum()">Calculate sum</button>
+
+    </p>
+    <script>
+        //multiplication table
+        function table(){
+            var N=Number(prompt("Enter a number to get Multiplication table: "));
+            var mulTab="";
+            for (var i=1;i<=10;i++){
+                mulTab += N + "*"+ i + "=" + (N*i) +"\n";
+            }
+            alert("Multiplication table:\n"+mulTab);
+        }
+        //sum
+        function sum(){
+            let n1=Number(prompt('Enter a number: '));
+            let choice=confirm("Do you want to add another?");
+            let sum=n1;
+            if(choice){
+                let n2=Number(prompt('Enter another number: '));
+                sum+=n2;
+                alert('Sum of numbers:'+sum);
+            }
+            if(!choice){
+                alert("Required sum is: "+sum);
+            }
+        
+        }
+
+    </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Sign In</title>
+  </head>
+  <body>
+    <form onsubmit="return login()">
+      <legend><h2>Sign In</h2>
+      
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter Username"><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter Password"><br><br>
+      
+      <button type="submit">Submit</button>
+      
+      <div id="output"></div>
+   </legend>
+   </form>
+    <script>
+      function login() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        if (username === "" || password === "") {
+          document.getElementById("output").innerHTML = "Both fields are mandatory";
+          return false;
+        }
+
+        if (username.length < 6) {
+          document.getElementById("output").innerHTML = "Username must be at least 6 characters";
+          return false;
+        }
+
+        if (password.length < 6) {
+          document.getElementById("output").innerHTML = "Password must be at least 6 characters";
+          return false;
+        }
+
+        if (username === "dhanu" && password === "123456") {
+          alert("Login successful");
+          window.location.href = ""; 
+        } else {
+          document.getElementById("output").innerHTML = "Invalid username or password";
+        }
+
+        return false; 
+      }
+    </script>
+  </body>
+</html>

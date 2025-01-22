@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Sign up</h1>
+    <table align="center" cellpadding="10" cellspacing="10">
+        <form>
+            <tr>
+                <td>Enter user name:</td>
+                <td><input type="text" placeholder="enter user name"  id="name" pattern="/^[A-Z]{1-10}$/"></td>
+            </tr>
+            <tr>
+                <td>Enter password</td>
+                <td><input type="password" id="pass" placeholder="enter password"></td>
+            </tr>
+            <tr>
+               <td ><input type="button" value="Sign up" onclick="my1()"></td>
+            </tr>
+        </form>
+    </table>
+    <script>
+        
+        function my1()
+        {
+            let pat=/^[A-Z]{1,10}$/;
+            let pat1=/^\d{1,10}$/;
+            let c=document.getElementById("name").value;
+            let d=document.getElementById("pass").value;
+            if(pat.test(c) && pat1.test(d))
+        {
+               alert("sign up");   
+        }
+            else
+            {
+              alert("something is wrong");
+            }
+
+        }
+    </script>
+</body>
+</html>

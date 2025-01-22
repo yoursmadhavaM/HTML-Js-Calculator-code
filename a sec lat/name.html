@@ -1,0 +1,17 @@
+<html>
+<head>
+   </head>
+   <body>
+      <h1>ENTER YOUR NAME</h1>
+	  <input type="text" id="nameinput"placeholder="enter your name">
+	  <button onclick="printname ()">Submit</button>
+	  <p id="output"></p>
+	  <script>
+	    function printname(){
+	  let name= document.getElementById("nameinput").value;
+	  document.getElementById("output").innerHTML="Hello,"+ name;
+	  }
+	  </script>
+	  </body>
+	  </html>
+	  
