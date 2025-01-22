@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fact()">CLICK FOR FACTORIAL</button>
+    <br><br>
+    <button onclick="prime()">CLICK FOR PRIME</button>
+    <br><br>
+    <button onclick="sum()">CLICK FOR SUM</button>
+    <p id="out"></p>
+
+    <script>
+        function fact() {
+            // Prompt the user for input
+            let number = prompt("Enter a number to calculate its factorial:");
+            
+            // Convert input to a number
+            number = parseInt(number);
+
+            // If the number is valid and non-negative, calculate the factorial
+            if (!isNaN(number) && number >= 0) {
+                let result = 1;
+                for (let i = 1; i <= number; i++) {
+                    result *= i;
+                }
+                alert(`Factorial of ${number} is ${result}.`); // Show result in an alert box
+            } else {
+                alert("Please enter a valid non-negative number.");
+            }
+        }
+
+        function prime() {
+            // Prompt the user for input
+            let number = prompt("Enter a number to check if it's prime:");
+
+            // Convert input to a number
+            number = parseInt(number);
+
+            // Check if the number is valid
+            if (isNaN(number) || number <= 1) {
+                alert("Please enter a valid number greater than 1.");
+                return;
+            }
+
+            // Check if the number is prime
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            // Display result in an alert box
+            if (isPrime) {
+                alert(`${number} is a prime number.`);
+            } else {
+                alert(`${number} is not a prime number.`);
+            }
+        }
+
+        function sum() {
+            // Prompt the user for two numbers
+            let num1 = prompt("Enter the first number:");
+            let num2 = prompt("Enter the second number:");
+
+            // Convert the inputs to numbers
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // If both inputs are valid numbers, calculate the sum
+            if (!isNaN(num1) && !isNaN(num2)) {
+                let result = num1 + num2;
+                alert(`The sum of ${num1} and ${num2} is ${result}.`); // Display result in an alert
+            } else {
+                alert("Please enter valid numbers.");
+            }
+        }
+    </script>
+</body>
+</html>
